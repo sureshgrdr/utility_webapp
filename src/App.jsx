@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import { Counter } from "./apps/Counter";
-import { NoteList } from "./apps/NoteList";
+import { TodoList } from "./apps/TodoList";
 import { SimpleCalculator } from "./apps/SimpleCalculator";
 import Timer from "./apps/Timer";
 
@@ -30,9 +30,9 @@ function App() {
 
   return (
     <>
-      <div className="my-4  grid grid-cols-1 justify-center gap-2 sm:mx-1 md:mx-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="my-4  grid grid-cols-1 gap-2 sm:mx-1 md:mx-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         <Timer />
-        <NoteList />
+        <TodoList />
         <Counter />
         <SimpleCalculator />
         <button
