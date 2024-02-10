@@ -24,7 +24,7 @@ export const TodoList = () => {
       <div className="container mb-2 flex flex-row items-center justify-center gap-2 ">
         <input
           type="text"
-          className="inputNote bg-clr-bkg text-clr-fnt/80 w-80 rounded-3xl p-2 px-4  focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500"
+          className="inputNote w-80 rounded-3xl bg-clr-bkg p-2 px-4 text-clr-fnt/80  focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500"
           placeholder="take note"
           onKeyDown={(e) => handleEnter(e)}
           spellCheck="false"
@@ -39,13 +39,14 @@ export const TodoList = () => {
       >
         <span className="material-symbols-outlined spanIcon">restart_alt</span>
       </button>
+
       <br />
-      <ul className="bg-clr-bkg container rounded-xl p-8 ">
+      <ul className="container list-disc rounded-xl bg-clr-bkg p-8">
         {state?.map((item, i) => {
           return (
             <li
               key={i}
-              className=" border-b-clr-acnt mb-2 flex flex-row items-center justify-between gap-2 border-b-2 p-1"
+              className=" mb-2 flex flex-row items-center justify-between gap-2 border-b-2 border-b-clr-acnt p-1 "
             >
               <p>{item}</p>
               <button
