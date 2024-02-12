@@ -20,20 +20,20 @@
 
 @layer components {
   .btn {
-    @apply bg-clr-bkg text-clr-fnt m-1 flex items-center justify-center rounded-full p-2 px-10 font-medium drop-shadow-md hover:bg-blue-600 active:translate-y-1;
+    @apply m-1 flex items-center justify-center rounded-full bg-clr-bkg p-2 px-10 font-medium text-clr-fnt drop-shadow-md hover:bg-blue-600 active:translate-y-1;
   }
   .btn-mini {
-    @apply bg-clr-bkg text-clr-fnt m-1 flex items-center justify-center rounded-full p-1 px-2  drop-shadow-md hover:bg-blue-600 active:translate-y-1;
+    @apply m-1 flex items-center justify-center rounded-full bg-clr-bkg p-1 px-2 text-clr-fnt  drop-shadow-md hover:bg-blue-600 active:translate-y-1;
   }
   .appUI {
-    @apply bg-clr-acnt/60 text-clr-fnt m-4  flex min-w-80 max-w-lg select-none flex-col flex-wrap items-center justify-center rounded-3xl p-8 shadow-lg;
+    @apply m-4 flex min-w-80  max-w-lg select-none flex-col flex-wrap items-center justify-center rounded-3xl bg-clr-acnt/60 p-8 text-clr-fnt shadow-lg;
   }
   .spanIcon {
     @apply text-lg;
   }
 }
 * {
-  @apply transition-colors duration-200;
+  @apply transition-all duration-75;
 }
 
 /* width */
@@ -44,6 +44,7 @@
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 20px;
 }
 
 /* Handle */

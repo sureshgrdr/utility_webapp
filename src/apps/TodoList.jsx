@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const TodoList = () => {
   const [state, setState] = useState([]);
 
-  const handleAddNote = () => {
+  const handleAddNote = (e) => {
     let note = document.querySelector(".inputNote");
     let newNote =
       note.value.slice(0, 1).toUpperCase() + note.value.slice(1).toLowerCase();
@@ -41,26 +41,28 @@ export const TodoList = () => {
       </button>
 
       <br />
-      <ul className="container list-disc rounded-xl bg-clr-bkg p-8">
-        {state?.map((item, i) => {
-          return (
-            <li
-              key={i}
-              className=" mb-2 flex flex-row items-center justify-between gap-2 border-b-2 border-b-clr-acnt p-1 "
-            >
-              <p>{item}</p>
-              <button
-                className=" hover:text-red-500"
-                onClick={() => handleRemove(i)}
+      <div className="container rounded-xl bg-clr-bkg p-5">
+        <ul>
+          {state?.map((item, i) => {
+            return (
+              <li
+                key={i}
+                className="mb-2 flex list-disc flex-row items-center justify-between gap-5 border-b-2 border-b-clr-acnt p-1"
               >
-                <span className="material-symbols-outlined spanIcon">
-                  close
-                </span>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+                <p className=" overflow-hidden break-words">{item}</p>
+                <button
+                  className=" hover:text-red-500"
+                  onClick={() => handleRemove(i)}
+                >
+                  <span className="material-symbols-outlined spanIcon">
+                    close
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
