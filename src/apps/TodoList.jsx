@@ -42,16 +42,19 @@ export const TodoList = () => {
 
       <br />
       <div className="container rounded-xl bg-clr-bkg p-5">
-        <ul>
+        <ul className=" list-decimal">
           {state?.map((item, i) => {
             return (
               <li
                 key={i}
-                className="mb-2 flex list-disc flex-row items-center justify-between gap-5 border-b-2 border-b-clr-acnt p-1"
+                className="flex-row-center mb-2 list-disc justify-between gap-5 border-b-2 border-b-clr-acnt p-1 "
               >
-                <p className=" overflow-hidden break-words">{item}</p>
+                <p className=" flex-row-center gap-2 overflow-hidden break-words text-clr-fnt">
+                  <input type="checkbox" className="" />
+                  {item}
+                </p>
                 <button
-                  className=" hover:text-red-500"
+                  className=" text-clr-fnt duration-75 hover:text-red-500"
                   onClick={() => handleRemove(i)}
                 >
                   <span className="material-symbols-outlined spanIcon">

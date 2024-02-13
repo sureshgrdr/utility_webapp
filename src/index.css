@@ -31,9 +31,15 @@
   .spanIcon {
     @apply text-lg;
   }
+  .flex-row-center {
+    @apply flex flex-row items-center justify-center;
+  }
+  .flex-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
 }
 * {
-  @apply transition-all duration-75;
+  @apply transition-colors duration-200;
 }
 
 /* width */

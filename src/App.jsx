@@ -5,6 +5,7 @@ import { Counter } from "./apps/Counter";
 import { TodoList } from "./apps/TodoList";
 import { SimpleCalculator } from "./apps/SimpleCalculator";
 import Timer from "./apps/Timer";
+import { AppMenu } from "./Components/AppMenu";
 
 function App() {
   const [theme, setTheme] = useState(true);
@@ -30,13 +31,16 @@ function App() {
 
   return (
     <>
-      <div className="my-4  grid grid-cols-1 gap-2 sm:mx-1 md:mx-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-        <Timer />
-        <TodoList />
-        <Counter />
-        <SimpleCalculator />
+      <div className="">
+        <div className="my-4  grid grid-cols-1 gap-2 sm:mx-1 md:mx-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          <Timer />
+          <TodoList />
+          <Counter />
+          <SimpleCalculator />
+        </div>
+        <AppMenu />
         <button
-          className="fixed bottom-5 right-8 z-50 text-4xl opacity-30 transition hover:opacity-100 active:translate-y-1"
+          className="fixed bottom-5 right-8 z-50 text-4xl opacity-30 drop-shadow-lg transition hover:opacity-100 active:translate-y-1"
           title="dark/light"
           onClick={() => {
             setTheme(!theme);
