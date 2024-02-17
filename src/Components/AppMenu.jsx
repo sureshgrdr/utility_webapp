@@ -12,7 +12,7 @@ export const AppMenu = () => {
         </div>
         <div className="flex-col-center">
           <span className="material-symbols-outlined m-2 rounded-lg bg-clr-bkg p-3 text-3xl text-clr-fnt">
-            <span class="material-symbols-outlined">description </span>
+            <span className="material-symbols-outlined">description </span>
           </span>
           <span className="text-md font-medium text-clr-fnt">Timer</span>
         </div>
