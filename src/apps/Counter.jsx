@@ -20,25 +20,29 @@ export const Counter = () => {
   const [count, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div className="appUI">
-      <p className="text-4xl font-bold">🎉 Counter</p>
-      <br />
-      <p className="text-3xl font-semibold text-orange-400">{count}</p>
-      <br />
-      <div className="flex flex-row flex-wrap items-center justify-center">
-        <button className="btn" onClick={() => dispatch("increament")}>
-          Add
-        </button>
-        <button className="btn" onClick={() => dispatch("decreament")}>
-          Sub
-        </button>
-        <button
-          className="btn hover:bg-red-500"
-          onClick={() => dispatch("reset")}
-        >
-          Reset
-        </button>
+    <>
+      <div className="container row-span-1 grid">
+        <div className="appUI">
+          <p className="text-4xl font-bold">🎉 Counter</p>
+          <br />
+          <p className="text-3xl font-semibold text-orange-400">{count}</p>
+          <br />
+          <div className="flex flex-row flex-wrap justify-center">
+            <button className="btn" onClick={() => dispatch("increament")}>
+              Add
+            </button>
+            <button className="btn" onClick={() => dispatch("decreament")}>
+              Sub
+            </button>
+            <button
+              className="btn-mini hover:bg-red-500"
+              onClick={() => dispatch("reset")}
+            >
+              <span className="material-symbols-outlined">restart_alt</span>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

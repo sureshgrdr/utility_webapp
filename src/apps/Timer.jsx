@@ -76,57 +76,61 @@ export default function Timer() {
   };
 
   return (
-    <div className="appUI">
-      <p className="text-4xl font-bold">⏲️ Timer</p>
-      <br />
+    <>
+      <div className="container row-span-1 grid ">
+        <div className="appUI">
+          <p className="text-4xl font-bold">⏲️ Timer</p>
+          <br />
 
-      <p className="disTime text-3xl font-semibold text-orange-400"></p>
-      <br />
-      <div className="container grid grid-cols-2 justify-center gap-2 px-4">
-        <select
-          className="optionTimer  cursor-pointer rounded-2xl bg-clr-bkg px-2 py-1 text-clr-fnt"
-          onChange={(e) => OptionTimer(e.target.value)}
-          defaultValue={"Select"}
-        >
-          <option disabled hidden>
-            Select
-          </option>
-          <option disabled>HH : MM : SS</option>
-          {timings.map((item, i) => {
-            return (
-              <option
-                className="cursor-pointer rounded-lg p-2 text-black text-clr-fnt "
-                key={i}
-                value={item.ctime}
-              >
-                {item.tname}
+          <p className="disTime text-3xl font-semibold text-orange-400"></p>
+          <br />
+          <div className="container grid grid-cols-2 justify-center gap-2">
+            <select
+              className="optionTimer container cursor-pointer rounded-2xl bg-clr-bkg px-2 py-1 text-clr-fnt"
+              onChange={(e) => OptionTimer(e.target.value)}
+              defaultValue={"Select"}
+            >
+              <option disabled hidden>
+                Select
               </option>
-            );
-          })}
-        </select>
-        <input
-          className="inputTime cursor-pointer rounded-2xl bg-clr-bkg p-1 px-4 text-clr-fnt "
-          type="time"
-          onChange={(e) => inputTimer(e)}
-        />
-      </div>
+              <option disabled>HH : MM : SS</option>
+              {timings.map((item, i) => {
+                return (
+                  <option
+                    className=" cursor-pointer rounded-lg p-2 text-clr-fnt "
+                    key={i}
+                    value={item.ctime}
+                  >
+                    {item.tname}
+                  </option>
+                );
+              })}
+            </select>
+            <input
+              className="inputTime container cursor-pointer rounded-2xl bg-clr-bkg p-1 px-4 text-clr-fnt "
+              type="time"
+              onChange={(e) => inputTimer(e)}
+            />
+          </div>
 
-      <br />
-      <div className="flex flex-row">
-        {toggler ? (
-          <button className="btn bg-green-600" onClick={startTimer}>
-            <span className="material-symbols-outlined">play_arrow</span>
-          </button>
-        ) : (
-          <button className="btn bg-red-500" onClick={stopTimer}>
-            <span className="material-symbols-outlined">stop</span>
-          </button>
-        )}
-        <button className="btn hover:bg-red-500" onClick={resetTimer}>
-          <span className="material-symbols-outlined">restart_alt</span>
-        </button>
+          <br />
+          <div className="flex flex-row flex-wrap justify-center">
+            {toggler ? (
+              <button className="btn bg-green-600" onClick={startTimer}>
+                <span className="material-symbols-outlined">play_arrow</span>
+              </button>
+            ) : (
+              <button className="btn bg-red-500" onClick={stopTimer}>
+                <span className="material-symbols-outlined">stop</span>
+              </button>
+            )}
+            <button className="btn-mini hover:bg-red-500" onClick={resetTimer}>
+              <span className="material-symbols-outlined">restart_alt</span>
+            </button>
+          </div>
+          {/* <button className="btn app-close-btn hover:bg-red-500 w-10 ">X</button> */}
+        </div>
       </div>
-      {/* <button className="btn app-close-btn hover:bg-red-500 w-10 ">X</button> */}
-    </div>
+    </>
   );
 }
